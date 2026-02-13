@@ -137,7 +137,7 @@ export const Login: React.FC = () => {
       </div>
       
       <div className="absolute bottom-4 text-center w-full">
-         <p className="text-[10px] text-gray-400 dark:text-gray-600 font-medium tracking-widest uppercase opacity-60">CareSync Family Serverless v2.0</p>
+         <p className="text-[10px] text-gray-400 dark:text-gray-600 font-medium tracking-widest uppercase opacity-60">CareSync Family Serverless v2.1.0</p>
       </div>
     </div>
   );

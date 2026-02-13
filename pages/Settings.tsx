@@ -60,7 +60,7 @@ export const Settings: React.FC = () => {
            </button>
        </div>
        
-       <p className="text-center text-xs text-gray-400 mt-8">CareSync v2.0 • Serverless Edition</p>
+       <p className="text-center text-xs text-gray-400 mt-8">CareSync v2.1.0 • Serverless Edition</p>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { Task, TaskPriority, TaskStatus, TaskType } from '../types';
 import { useApp } from '../context/AppContext';
 import { db } from '../services/dbService';
@@ -20,7 +20,7 @@ interface TaskCardProps {
   task: Task;
 }
 
-export const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
+const TaskCardComponent: React.FC<TaskCardProps> = ({ task }) => {
   const { users, elderlyProfiles, currentUser, refreshTasks } = useApp();
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -28,8 +28,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   const assignee = users.find(u => u.id === task.assignedToId);
   
   const isAssignedToMe = task.assignedToId === currentUser.id;
-  const isPending = task.status === TaskStatus.PENDING;
-
+  
   const handleAssign = async (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsProcessing(true);
@@ -162,3 +161,5 @@ export const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
     </div>
   );
 };
+
+export const TaskCard = memo(TaskCardComponent);

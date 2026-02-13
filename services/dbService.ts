@@ -1,10 +1,11 @@
 import { MOCK_ELDERLY, MOCK_USERS, INITIAL_TASKS } from '../constants';
 import { Task, User, ElderlyProfile, ActionResponse, TaskStatus, Role } from '../types';
 
-const STORAGE_KEY_TASKS = 'caresync_tasks_v8';
-const STORAGE_KEY_USERS = 'caresync_users_v8';
-const STORAGE_KEY_ELDERLY = 'caresync_elderly_v8'; 
-const STORAGE_KEY_SESSION = 'caresync_session_v8';
+// ATENÇÃO: Alterado para v10 para apagar totalmente o registro da Júlia/Bia e carregar a Mariana
+const STORAGE_KEY_TASKS = 'caresync_tasks_v10';
+const STORAGE_KEY_USERS = 'caresync_users_v10';
+const STORAGE_KEY_ELDERLY = 'caresync_elderly_v10'; 
+const STORAGE_KEY_SESSION = 'caresync_session_v10';
 
 const channel = new BroadcastChannel('caresync_realtime_channel');
 const notifyChange = (entity: 'TASKS' | 'USERS' | 'PROFILES') => {
